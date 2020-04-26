@@ -1,5 +1,7 @@
 # COVID-19 Research: Team 3 (Risk Factors) #
 
+![Log map of covid-19 in US](images/covid_map.png)
+
 ## Installment ##
 
 To run this code, you only need the requirements listed in `requirements.txt` and you can install them by running `pip install -r requirements.txt` in your working directory. Running `bash test_plots.sh` should plot each individual map in a browser.
