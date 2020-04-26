@@ -1,4 +1,4 @@
-# COVID-19 Research: Team 3 (Risk Factors #)
+# COVID-19 Research: Team 3 (Risk Factors) #
 
 ## Installment ##
 
