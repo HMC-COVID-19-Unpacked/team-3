@@ -4,11 +4,12 @@ import json
 
 BASE_DIR = 'obesity/'
 
-def add0s(input):
-    if (len(str(input)) < 5):
-        return '0' + str(input)
+# Make sure fips has five digits by adding leading 0s
+def add0s(fips):
+    if (len(str(fips)) < 5):
+        return '0' + str(fips)
     else:
-        return str(input)
+        return str(fips)
 
 ## Making a dataframe of all the data found in the csv
 df = pd.read_csv(BASE_DIR + 'Obesity_Data.csv', usecols=['fips', 'Outcome', 'Prevalence 2011 (%)'], dtype={'fips': str})
@@ -26,6 +27,11 @@ meanLocationSeries = locations.groupby(by=locations.fips, sort=False).mean()
 
 ## Putting together all the information
 compiled = pd.DataFrame(data={'fips': uniqueFips, 'Prevalence': meanLocationSeries["Prevalence 2011 (%)"].tolist()})
+
+# compiled = compiled.sort_values(by=['fips'])
+# compiled = compiled.rename(columns={'Prevalence': 'freq'})
+# compiled['freq'] = compiled['freq'].apply(lambda x: x/100)
+# compiled.to_csv('overall_data/obesity_compiled.csv')
 
 ## Create a graph object to plot the new data
 fig = go.Figure(data=go.Choropleth(
