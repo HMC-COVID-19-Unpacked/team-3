@@ -1,2 +1,9 @@
+# Virtual environments
 /Obesity/venv/
-/.DS_Store/
+/venv/
+
+# IDE
+.vscode/
+
+# Mac stuff
+.DS_Store

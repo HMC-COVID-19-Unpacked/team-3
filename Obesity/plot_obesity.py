@@ -1,7 +1,8 @@
 import plotly.graph_objects as go
 import pandas as pd
 import json
-import plotly.express as px
+
+BASE_DIR = 'obesity/'
 
 def add0s(input):
     if (len(str(input)) < 5):
@@ -10,10 +11,10 @@ def add0s(input):
         return str(input)
 
 ## Making a dataframe of all the data found in the csv
-df = pd.read_csv('Obesity_Data.csv', usecols=['fips', 'Outcome', 'Prevalence 2011 (%)'], dtype={'fips': str})
+df = pd.read_csv(BASE_DIR + 'Obesity_Data.csv', usecols=['fips', 'Outcome', 'Prevalence 2011 (%)'], dtype={'fips': str})
 
 ## Getting all fips codes from json
-with open('counties_locations.json') as response:
+with open(BASE_DIR + 'counties_locations.json') as response:
     counties = json.load(response)
 
 ## Filter out all of the non-obesity columns from the data frame, then remove Obesity column
