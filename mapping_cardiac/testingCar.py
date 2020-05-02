@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import plotly.express as px
 
-df = pd.read_excel('Cardiovascular2014-.xlsx', usecols=['Fips_text', 'Mortality', 'Location'], dtype={'Fips_text': str})
+df = pd.read_excel('mapping_cardiac/Cardiovascular2014-.xlsx', usecols=['Fips_text', 'Mortality', 'Location'], dtype={'Fips_text': str})
 #make df dict
 # dfDict = dict(zip(df['Fips_text'], df['Mortality']))
 # print(dfDict)
@@ -15,7 +15,7 @@ df = pd.read_excel('Cardiovascular2014-.xlsx', usecols=['Fips_text', 'Mortality'
 
 
 
-with open('counties_locations.json') as response:
+with open('mapping_cardiac/counties_locations.json') as response:
     counties = json.load(response)
 
 
