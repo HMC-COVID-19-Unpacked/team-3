@@ -29,4 +29,7 @@ fig.update_layout(
     geo_scope='usa', # limite map scope to USA
 )
 
-fig.show()
+def get_html():
+    return fig.to_html()
+
+# fig.show()

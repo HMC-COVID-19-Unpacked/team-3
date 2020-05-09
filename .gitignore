@@ -7,3 +7,6 @@
 
 # Mac stuff
 .DS_Store
+
+# Cache
+asthma/__pycache__/
