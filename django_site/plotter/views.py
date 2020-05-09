@@ -1,7 +1,8 @@
 import sys
+from .damn_slashes import SLASH
 import os
-ROOT_DIR = '/'.join((os.path.dirname(os.path.abspath(__file__)).split('/'))[:-2])
-sys.path.insert(0, ROOT_DIR + '/asthma/')
+ROOT_DIR = SLASH.join((os.path.dirname(os.path.abspath(__file__)).split(SLASH))[:-2]) + SLASH
+sys.path.insert(0, ROOT_DIR + 'asthma' + SLASH)
 # print(sys.path)
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -17,4 +18,4 @@ def home(request):
     context = {
         'html': html_source
     }
-    return render(request, 'plotter/home.html', context)
+    return render(request, 'plotter' + SLASH + 'home.html', context)

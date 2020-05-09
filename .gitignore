@@ -10,3 +10,4 @@
 
 # Cache
 asthma/__pycache__/
+django_site/plotter/__pycache__/
